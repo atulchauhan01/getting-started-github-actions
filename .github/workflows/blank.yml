@@ -44,7 +44,7 @@ jobs:
           echo 4. What build tools are installed?
           mvn --version
           gradle --version
-          ant --version
+          ant -version
           echo
           echo 5. What is the workspace location
           echo $RUNNER_WORKSPACE
