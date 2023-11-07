@@ -32,7 +32,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          echo 1. github.ref
           echo $github.ref
+          echo 2. github.ref
+          echo "${{ github.ref }}"
           snapshot_tag=$(echo "${{ github.ref }}" | sed -e 's/refs\/tags\/release\///')
           echo $snapshot_tag
           echo Nothing to see in the multi-line script
