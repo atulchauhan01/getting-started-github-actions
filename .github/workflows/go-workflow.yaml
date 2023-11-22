@@ -49,6 +49,18 @@ jobs:
       run: |
         go vet .
         golint .
+
+# Better example
+    - name: Run GoLint
+      run: |
+        go get -u golang.org/x/lint/golint
+        golint ./plugins-local/src/jwtauthenticator/...
+
+    - name: golangci-lint
+      uses: golangci/golangci-lint-action@v3
+      with:
+        version: v3.7.0
+        working-directory: ./plugins-local/src/jwtauthenticator
     
     # Run testing on the code
     - name: Run testing
